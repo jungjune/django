@@ -5,7 +5,6 @@ from shareRes.models import *
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-from RestaurantShare.code import *
 
 # Create your views here.
 def sendEmail(request):
@@ -26,6 +25,7 @@ def sendEmail(request):
         mail_html += "<h4>* 상세 내용</h4>"+"<p>"+restaurant.restaurant_keyword+"</p><br>"
         mail_html += "<br>"
     ##
+    google_app = '0000'
     server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
     server.login("jungjun1271@gmail.com", google_app)
     ##
